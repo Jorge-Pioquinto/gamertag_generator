@@ -3,10 +3,13 @@ require "sinatra/reloader"
 require "faker"
 
 GAME_WORDS = {
-  'Minecraft' => [Faker::Games::Minecraft.unique.biome],
-  'Overwatch' => [Faker::Games::Overwatch.unique.hero],
-  'Zelda' => [Faker::Games::Zelda.unique.character],
-  'Star Wars: Battlefront' => [Faker::Movies::StarWars.unique.droid, Faker::Movies::StarWars.unique.call_sign],
+  'Minecraft' => [Faker::Games::Minecraft.unique.biome, Faker::Games::Minecraft.unique.block],
+  'Overwatch' => [Faker::Games::Overwatch.unique.hero, Faker::Games::Overwatch.unique.location ],
+  'Zelda' => [Faker::Games::Zelda.unique.character, Faker::Games::Zelda.unique.item],
+  'Star Wars: Battlefront' => [Faker::Movies::StarWars.unique.droid, Faker::Movies::StarWars.unique.call_sign, Faker::Movies::StarWars.planet],
+  'Pokemon' => [Faker::Games::Pokemon.unique.name, Faker::Games::Pokemon.unique.move],
+  'Elder Scroll' => [Faker::Games::ElderScrolls.unique.name, Faker::Games::ElderScrolls.unique.creature, Faker::Games::ElderScrolls.unique.race],
+  'Street Fighter' => [Faker::Games::StreetFighter.unique.character, Faker::Games::StreetFighter.unique.move] 
 }
 
 get("/") do
