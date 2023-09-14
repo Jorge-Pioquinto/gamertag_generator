@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GamerTag Generator</title>
+</head>
+<body>
+  <h1>GamerTag Generator</h1>
+  <form action="/generate" method="post">
+    <label for="username">Enter Keyword you want included: </label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="username">Enter Number you want included: </label>
+    <input type="text" id="user_num" name="user_num" optional><br>
+
+    <label for="game">Select your favorite game: </label>
+    <select id="game" name="game">
+      <% @games.each do |game| %>
+        <option value="<%= game %>"><%= game %></option>
+      <% end %>
+    </select><br>
+
+    <input type="submit" value="Generate GamerTag">
+  </form>
+</body>
+</html>
